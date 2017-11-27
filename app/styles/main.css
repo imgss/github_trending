@@ -1,0 +1,18 @@
+body {
+  padding: 10px;
+  padding-top: 1px; 
+  width: 600px;
+  height: 200px;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  display: none
+}
+[itemprop="programmingLanguage"]{
+  color: rgb(146, 168, 0);
+  font-weight: 600;
+}
