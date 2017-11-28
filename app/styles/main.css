@@ -4,7 +4,30 @@ body {
   width: 600px;
   height: 200px;
 }
-
+.repo-language-color {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%
+}
+.f6.text-gray.mt-2 {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+}
+.f6.text-gray.mt-2 span, .f6.text-gray.mt-2 a{
+  line-height: 19.2px;
+  vertical-align: -webkit-baseline-middle;
+}
+li{
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(225, 228, 232)
+}
+a{
+  text-decoration: none;
+}
 h2 {
   text-align: center;
 }
