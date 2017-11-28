@@ -11,5 +11,5 @@
 
 ### 截图
 
-![插件截图]('./image/pic.PNG')
+![插件截图](https://github.com/imgss/github_trending/blob/master/image/pic.PNG?raw=true)
 
