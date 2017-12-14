@@ -13,6 +13,7 @@ selector.onchange = function(){
 let html = localStorage.getItem(new Date().getDate());
 if(html){
     article.innerHTML = html;
+    selector.value = new Date().getDate() + '';
 }else{
     axios.get('https://github.com/trending').then(response => {
         let trendList = /<ol[\s\S]+\<\/ol>/m.exec(response.data);
