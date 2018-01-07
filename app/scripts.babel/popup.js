@@ -15,8 +15,12 @@ if(html){
     article.innerHTML = html;
     selector.value = new Date().getDate() + '';
 }else{
+    chrome.browserAction.setBadgeText({text: 'load'});
+    chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 200, 255]});
     axios.get('https://github.com/trending').then(response => {
         let trendList = /<ol[\s\S]+\<\/ol>/m.exec(response.data);
+        chrome.browserAction.setBadgeText({text: 'done'});
+        chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 200, 255]});
         let html = trendList[0]
         html = html.replace(/href="(\S+)"/gm,'href="https://github.com$1"')
         localStorage.setItem(new Date().getDate(), html);//每月一号会覆盖之前的记录
