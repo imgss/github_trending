@@ -10,7 +10,11 @@ selector.innerHTML = Object
 selector.onchange = function(){
     article.innerHTML = localStorage.getItem(selector.selectedOptions[0].value);
 }
-let html = localStorage.getItem(new Date().getDate());
+let today = new Date().getDate()
+if(today === 1){
+    localStorage.clear();//一号清空缓存
+}
+let html = localStorage.getItem(today);
 if(html){
     article.innerHTML = html;
     selector.value = new Date().getDate() + '';
