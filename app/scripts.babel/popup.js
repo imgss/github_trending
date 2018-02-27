@@ -10,6 +10,10 @@ selector.innerHTML = Object
 selector.onchange = function(){
     article.innerHTML = localStorage.getItem(selector.selectedOptions[0].value);
 }
+document.getElementById('clear').addEventListener('click', function(){
+    console.log('clear')
+    localStorage.clear();
+})
 let today = new Date().getDate()
 if(today === 1){
     localStorage.clear();//一号清空缓存
@@ -29,6 +33,9 @@ if(html){
         html = html.replace(/href="(\S+)"/gm,'href="https://github.com$1"')
         localStorage.setItem(new Date().getDate(), html);//每月一号会覆盖之前的记录
         article.innerHTML = html;
+        let option = document.createElement('option');
+        option.textContent = new Date().getDate() + '';
+        selector.appendChild(option);
     }).catch(e => {
         alert('数据获取不成功');
     })
