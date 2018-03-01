@@ -15,9 +15,6 @@ document.getElementById('clear').addEventListener('click', function(){
     localStorage.clear();
 })
 let today = new Date().getDate()
-if(today === 1){
-    localStorage.clear();//一号清空缓存
-}
 let html = localStorage.getItem(today);
 if(html){
     article.innerHTML = html;
@@ -31,7 +28,7 @@ if(html){
         chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 200, 255]});
         let html = trendList[0]
         html = html.replace(/href="(\S+)"/gm,'href="https://github.com$1"')
-        localStorage.setItem(new Date().getDate(), html);//每月一号会覆盖之前的记录
+        localStorage.setItem(new Date().getDate(), html);
         article.innerHTML = html;
         let option = document.createElement('option');
         option.textContent = new Date().getDate() + '';
