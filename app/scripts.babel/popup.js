@@ -27,7 +27,7 @@ if(html){
         chrome.browserAction.setBadgeText({text: 'done'});
         chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 200, 255]});
         let html = trendList[0]
-        html = html.replace(/href="(\S+)"/gm,'href="https://github.com$1"')
+        html = html.replace(/href="\/(\S+)"/gm,'href="https://github.com/$1"')
         localStorage.setItem(new Date().getDate(), html);
         article.innerHTML = html;
         let option = document.createElement('option');
