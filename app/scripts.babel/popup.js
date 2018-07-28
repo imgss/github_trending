@@ -10,10 +10,7 @@ selector.innerHTML = Object
 selector.onchange = function(){
     article.innerHTML = localStorage.getItem(selector.selectedOptions[0].value);
 }
-document.getElementById('clear').addEventListener('click', function(){
-    console.log('clear')
-    localStorage.clear();
-})
+// 获取今天的trending
 let today = new Date().getDate()
 let html = localStorage.getItem(today);
 if(html){
@@ -37,9 +34,18 @@ if(html){
         alert('数据获取不成功');
     })
 }
-
+// 打开项目
 article.addEventListener('click',function (event) {
     if(event.target.href){
         window.open(event.target.href)
     }
+})
+
+// 清除缓存
+document.getElementById('clear').addEventListener('click', function(){
+    this.innerHTML = '清除完成✅'
+    setTimeout(() => {
+        this.innerHTML = '清除缓存'
+    }, 2000)
+    localStorage.clear();
 })
