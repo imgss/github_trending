@@ -15,7 +15,6 @@ var today = new Date().getDate();
 var html = localStorage.getItem(today);
 if (html) {
     article.innerHTML = html;
-    selector.value = new Date().getDate() + '';
 } else {
     chrome.browserAction.setBadgeText({ text: 'load' });
     chrome.browserAction.setBadgeBackgroundColor({ color: [0, 0, 200, 255] });
@@ -34,6 +33,7 @@ if (html) {
         alert('数据获取不成功');
     });
 }
+selector.value = new Date().getDate() + '';
 // 打开项目
 article.addEventListener('click', function (event) {
     if (event.target.href) {
